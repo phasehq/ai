@@ -1,40 +1,20 @@
-# @phasehq/ai
+# Phase AI Skills
 
 AI skills for deploying and managing [Phase](https://phase.dev) — the open-source secrets manager.
 
-Install deployment skills into your AI coding agent (Claude Code, Cursor, Windsurf, GitHub Copilot) with a single command.
+Install deployment skills into your AI coding agent (Claude Code, Cursor, Windsurf, GitHub Copilot) with a single command via the [skills](https://skills.sh/) ecosystem.
 
 ## Usage
 
 ```bash
-npx @phasehq/ai install <skill>
-```
+# Install all skills
+npx skills add phasehq/ai
 
-### Install a skill
-
-```bash
-npx @phasehq/ai install docker-compose
+# Install a specific skill
+npx skills add phasehq/ai -s docker-compose
 ```
 
 Then ask your AI agent: **"deploy Phase with Docker Compose"**
-
-### Install multiple skills
-
-```bash
-npx @phasehq/ai install k8s eks
-```
-
-### List available skills
-
-```bash
-npx @phasehq/ai list
-```
-
-### Update installed skills
-
-```bash
-npx @phasehq/ai update
-```
 
 ## Available Skills
 
@@ -46,7 +26,7 @@ npx @phasehq/ai update
 
 ## How it works
 
-Skills are markdown files that teach AI coding agents how to deploy Phase step-by-step. Running `npx @phasehq/ai install <skill>` copies the skill files into `.claude/skills/<skill>/` in your current directory. Your AI agent reads these files and uses them to automate the deployment interactively.
+Skills are markdown files that teach AI coding agents how to deploy Phase step-by-step. The [`skills`](https://skills.sh/) CLI installs them into your agent's skills directory (e.g. `.claude/skills/`). Your AI agent reads these files and uses them to automate the deployment interactively.
 
 Each skill includes:
 - **SKILL.md** — The main instruction file with workflow phases and principles
